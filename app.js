@@ -1,5 +1,5 @@
 //
-
+const startButton = document.querySelector(".start-btn")
 const bird = document.querySelector(".bird");
 const gameDisplay = document.querySelector(".game-container");
 const ground = document.querySelector(".ground");
@@ -15,12 +15,15 @@ function startGame() {
   bird.style.left = birdLeft + "px";
 }
 
+
 let timerId = setInterval(startGame, 20);
+
+startButton.addEventListener("click", startGame);
 
 // using keypress event to make bird jump
 function jump() {
   birdBottom += 50;
-  bird.style.bottom = birdBottom + "px";
+  bird.style.bottom = birdBottom + "px"; 
   console.log(birdBottom);
 }
 
@@ -35,6 +38,7 @@ function createObstacles() {
   gameDisplay.appendChild(obstacle);
   obstacle.style.left = obstacleLeft + 'px'
     obstacle.style.bottom = obstacleBottom + 'px'
+    obstacleLeft -= 20;
 }
 
 createObstacles();
