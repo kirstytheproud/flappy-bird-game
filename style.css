@@ -1,0 +1,37 @@
+.game-container {
+  width: 600px;
+  height: 730px;
+  position: absolute;
+}
+
+.sky {
+  background-color: lightblue;
+  width: 600px;
+  height: 500px;
+  position: absolute;
+}
+
+.ground {
+  background-color: #632e2e;
+  width: 600px;
+  height: 150px;
+  position: absolute;
+  top: 500px;
+}
+
+.bird {
+  position: absolute;
+}
+
+.bird img {
+  width: 80px;
+  height: 80px;
+}
+
+.obstacle {
+  background-color: lightgreen;
+  width: 60px;
+  height: 200px;
+  position: absolute;
+}
+/*# sourceMappingURL=style.css.map */
