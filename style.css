@@ -7,6 +7,14 @@
   position: absolute;
 }
 
+.scoring {
+  display: inline-block;
+}
+
+.timer {
+  display: inline-block;
+}
+
 .sky {
   background-color: #7cc9e2;
   width: 600px;
