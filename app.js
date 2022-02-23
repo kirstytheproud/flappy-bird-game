@@ -4,21 +4,31 @@ const gameDisplay = document.querySelector(".game-container");
 const ground = document.querySelector(".ground");
 
 let birdLeft = 220;
-let birdBottom = 100;
+let birdBottom = 200;
 let gravity = 3;
+let gameStart = false;
+let gameIsOver = false;
 
 //Using a start button to start the game
-
-//positioning the bird in the right place
 const startGame = () => {
-  birdBottom -= gravity;
-  bird.style.bottom = birdBottom + "px";
-  bird.style.left = birdLeft + "px";
-};
-
-let timerId = setInterval(startGame, 20);
+  gameStart = true
+}
 
 startButton.addEventListener("click", startGame);
+
+//positioning the bird in the right place
+  const playGame = () => {
+    if(gameStart == true){
+    birdBottom -= gravity;
+    bird.style.bottom = birdBottom + "px";
+    bird.style.left = birdLeft + "px";
+    }
+  };
+
+
+
+let timerId = setInterval(playGame, 20);
+
 
 // using keypress event to make bird jump, specifically spacebar
 const jump = () => {
@@ -58,10 +68,12 @@ const createObstacles = () => {
 
 //need to make obstacles them move towards bird
 const moveObstacle = () => {
+  if(gameStart==true){
+
   obstacleLeft -= 3;
   obstacle.style.left = obstacleLeft + "px"
   topObstacleLeft -= 4;
-  topObstacle.style.left = topObstacleLeft
+  topObstacle.style.left = topObstacleLeft + "px"
   
   
   //obstacles need to disappear off the screen
@@ -69,6 +81,7 @@ const moveObstacle = () => {
     clearInterval(timerId);
     gameDisplay.removeChild(obstacle);
   }
+}
 };
 let timerId = setInterval(moveObstacle, 20);
 setTimeout(createObstacles, 3000);
