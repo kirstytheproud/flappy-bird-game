@@ -6,11 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Flappy Bird</title>
     <link rel="stylesheet" href="style.css" />
+    <script src="app.js" defer></script>
   </head>
   <body>
+    <div class="container">
     <h1>Flappy Bird</h1>
     <button class="start-btn">Start Game</button>
     <div class="game-container">
+    <h2 class="scoring" id="scoring">Score: 0</h2>
+    <h3 class="timer" id="timer">Timer</h3>
       <div class="sky">
           <div class="clouds">
               <img src="clouds in the sky.png" alt="clouds">
@@ -23,6 +27,7 @@
       <div class="ground"></div>
     </div>
 
-    <script src="app.js"></script>
+    </div>
+
   </body>
 </html>

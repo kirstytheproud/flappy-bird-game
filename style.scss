@@ -1,41 +1,47 @@
+//   
+
 .game-container {
-    width: 600px;
-    height: 730px;
-    position: absolute;
+  display: flex;
+  width: 600px;
+  height: 730px;
+  position: absolute;
 }
 
 .sky {
-    background-color: lightblue;
-    width: 600px;
-    height: 500px;
-    position: absolute;
+  background-color: rgb(124, 201, 226);
+  width: 600px;
+  height: 500px;
+  position: absolute;
+}
 
-    img{
-        width:600px;
-        height:500px; 
-    }
+.clouds {
+  img {
+    width: 600px;
+    height: 5    00px;
+    opacity: 0.75;
+  }
 }
 
 .ground {
-    background-color: rgb(99, 46, 46);
-    width: 600px;
-    height: 150px;
-    position: absolute;
-    top: 500px;
+  background-color: rgb(99, 46, 46);
+  width: 600px;
+  height: 150px;
+  position: absolute;
+  top: 500px;
 }
 
 .bird {
-    position: absolute;   
-    z-index: 2;
-   img {
-        width:80px;
-        height: 80px;
-    }
+  position: absolute;
+  z-index: 2;
+  img {
+    width: 80px;
+    height: 80px;
+  }
 }
 
 .obstacle {
-    background-color: rgb(0, 161, 0);
-    width: 60px;
-    height: 200px;
-    position: absolute;
+  background-color: rgb(0, 161, 0);
+  width: 60px;
+  height: 280px;
+  position: absolute;
 }

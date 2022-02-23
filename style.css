@@ -1,19 +1,23 @@
 .game-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   width: 600px;
   height: 730px;
   position: absolute;
 }
 
 .sky {
-  background-color: lightblue;
+  background-color: #7cc9e2;
   width: 600px;
   height: 500px;
   position: absolute;
 }
 
-.sky img {
+.clouds img {
   width: 600px;
-  height: 500px;
+  height: 5    00px;
+  opacity: 0.75;
 }
 
 .ground {
@@ -37,7 +41,7 @@
 .obstacle {
   background-color: #00a100;
   width: 60px;
-  height: 200px;
+  height: 280px;
   position: absolute;
 }
 /*# sourceMappingURL=style.css.map */
