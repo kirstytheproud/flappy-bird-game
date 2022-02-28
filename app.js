@@ -11,7 +11,7 @@ let gravity = 3;
 let gameStart = false;
 let gameIsOver = false;
 let score = 0;
-let gap = 400;
+let gap = 450;
 
 
   //Using a start button to start the game
@@ -75,14 +75,14 @@ const createObstacles = () => {
   gameDisplay.appendChild(topObstacle);
   topObstacle.appendChild(obstacleImgTop);
   topObstacle.style.left = obstacleLeft + "px";
-  topObstacle.style.bottom = obstacleBottom+ gap+ "px";
+  topObstacle.style.bottom = obstacleBottom + gap+ "px";
 
   //need to make obstacles them move towards bird
   const moveObstacle = () => {
     if (gameStart == true) {
       obstacleLeft -= 3;
       obstacle.style.left = obstacleLeft + "px";
-      topObstacle.style.left = topObstacleLeft + "px"
+      topObstacle.style.left = obstacleLeft + "px"
 
       //obstacles need to disappear off the screen
       if (obstacleLeft == -10) {
