@@ -9,7 +9,7 @@
 }
 
 body {
-  background-color: aquamarine;
+  background-color: #cbffee;
 }
 
 .container {
@@ -29,7 +29,7 @@ h1 {
   font-family: Mario;
   font-size: 60px;
   text-align: center;
-  margin: 20px;
+  margin-top: 30px;
 }
 
 .start-btn {
@@ -52,11 +52,17 @@ h1 {
   width: 600px;
   height: 730px;
   position: absolute;
-  margin-top: 300px;
+  margin-top: 200px;
 }
 
 .scoring {
-  display: inline;
+  display: block;
+  font-family: Mario;
+  font-size: 30px;
+  margin: 0px;
+  margin-top: 40px;
+  z-index: 4;
+  font-size: 50px;
 }
 
 .sky {
@@ -68,7 +74,7 @@ h1 {
 
 .clouds img {
   width: 600px;
-  height: 5    00px;
+  height: 5;
   opacity: 0.75;
 }
 
@@ -119,5 +125,11 @@ h1 {
 .game-over {
   z-index: 4;
   position: absolute;
+  width: 550px;
+  height: 450px;
+}
+
+audio {
+  display: none;
 }
 /*# sourceMappingURL=style.css.map */
