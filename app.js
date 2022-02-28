@@ -5,7 +5,7 @@ const bird = document.querySelector(".bird");
 const gameDisplay = document.querySelector(".game-container");
 const ground = document.querySelector(".ground");
 const scoreDisplay = document.getElementById("scoring");
-const timerDisplay = document.getElementById("timer");
+const audio = document.getElementById("audio");
 
 let birdLeft = 220;
 let birdBottom = 200;
@@ -18,6 +18,7 @@ let gap = 500;
 //Using a start button to start the game
 const startGame = () => {
   gameStart = true;
+  audio.play();
 };
 
 startButton.addEventListener("click", startGame);
@@ -139,6 +140,7 @@ const gameOver = () => {
   gameOverTitle.src = "Game-Over.png";
   gameDisplay.appendChild(gameOverTitle);
   gameOverTitle.style.bottom = gameOverText + "px";
+  audio.pause();
 };
 
 });
