@@ -71,4 +71,11 @@
   width: 60px;
   height: 280px;
 }
+
+.game-over {
+  display: none;
+  font-size: 100px;
+  z-index: 3;
+  position: absolute;
+}
 /*# sourceMappingURL=style.css.map */

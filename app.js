@@ -4,6 +4,7 @@ const gameDisplay = document.querySelector(".game-container");
 const ground = document.querySelector(".ground");
 const scoreDisplay = document.getElementById("scoring");
 const timerDisplay = document.getElementById("timer");
+const gameOverText = document.querySelector(".game-over");
 
 let birdLeft = 220;
 let birdBottom = 200;
@@ -52,10 +53,6 @@ const createObstacles = () => {
   let obstacleLeft = 500;
   let randomHeight = Math.random() * 100;
   let obstacleBottom = randomHeight;
-  let topObstacleLeft = obstacleLeft;
-  let randomHeight2 = Math.random() * -100;
-  let topObstacleBottom = randomHeight2;
-
   
   const obstacle = document.createElement("div");
   const obstacleImg = document.createElement("img");
