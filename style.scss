@@ -1,19 +1,57 @@
-//   
+@font-face {
+  font-family: Mario;
+  src: url(MarioAndLuigi-font.ttf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: aquamarine;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+   align-items: center;
+}
+
+h1 {
+  font-family: Mario;
+  font-size: 60px;
+  text-align: center;
+  margin: 20px;
+}
+
+
+.start-btn {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 8px;
+  display: inline-flex;
+
+}
 
 .game-container {
-  display: flex;
+  display: block;
   width: 600px;
   height: 730px;
   position: absolute;
+  margin-top : 300px;
 }
 
 .scoring {
-  display: inline-block;
+  display: inline;
 }
 
-.timer {
-  display: inline-block;
-}
 
 .sky {
   background-color: rgb(173, 228, 247);
@@ -80,5 +118,6 @@
 .game-over {
   z-index: 4;
   position: absolute;
-
+  // align-self: center;
+// margin-right: 60px;
 }
