@@ -12,27 +12,15 @@ let gameStart = false;
 let gameIsOver = false;
 let score = 0;
 
-//Using a start button to start the game
-const startGame = () => {
-  gameStart = true;
 
-  const timerCountdown = () => {
-    let sec = 30;
-    let timer = setInterval(function(){
-        timerDisplay.innerHTML='00:'+sec;
-        sec--;
-        if (sec < 0) {
-            clearInterval(timer);
-        }
-    }, 1000);
-}
-timerCountdown();
-}
+  //Using a start button to start the game
+  const startGame = () => {
+    gameStart = true;
+  }
+  
+  startButton.addEventListener("click", startGame);
+  
 
-
-
-
-startButton.addEventListener("click", startGame);
 
 //positioning the bird in the right place
 const playGame = () => {
@@ -69,8 +57,14 @@ const createObstacles = () => {
 
   
   const obstacle = document.createElement("div");
+  const obstacleImg = document.createElement("img");
   obstacle.classList.add("obstacle");
   gameDisplay.appendChild(obstacle);
+
+  obstacleImg.src = "8bit pipes.png";
+ 
+ 
+  obstacle.appendChild(obstacleImg);
   obstacle.style.left = obstacleLeft + "px";
   obstacle.style.bottom = obstacleBottom + "px";
 
@@ -94,6 +88,7 @@ const createObstacles = () => {
         gameDisplay.removeChild(obstacle);
       }
 
+      //need to make it game over if bird collids with obstacle
       if (
         (obstacleLeft > 200 && obstacleLeft < 200 && birdLeft === 220) ||
         birdBottom === 0
@@ -102,6 +97,7 @@ const createObstacles = () => {
       }
     }
   };
+
 
   //Need a scoring system that addes a point every time the bird jumps over an obstacle#
 
@@ -133,5 +129,3 @@ const gameOver = () => {
   //how you remove events
   document.removeEventListener("keyup", control);
 };
-
-//Add a time limit

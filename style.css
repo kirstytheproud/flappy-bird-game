@@ -16,7 +16,7 @@
 }
 
 .sky {
-  background-color: #7cc9e2;
+  background-color: #ade4f7;
   width: 600px;
   height: 500px;
   position: absolute;
@@ -36,6 +36,12 @@
   top: 500px;
 }
 
+.ground img {
+  width: 600px;
+  height: 150px;
+  opacity: .5;
+}
+
 .bird {
   position: absolute;
   z-index: 2;
@@ -47,9 +53,11 @@
 }
 
 .obstacle {
-  background-color: #00a100;
+  position: absolute;
+}
+
+.obstacle img {
   width: 60px;
   height: 280px;
-  position: absolute;
 }
 /*# sourceMappingURL=style.css.map */

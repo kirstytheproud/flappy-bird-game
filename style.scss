@@ -16,7 +16,7 @@
 }
 
 .sky {
-  background-color: rgb(124, 201, 226);
+  background-color: rgb(173, 228, 247);
   width: 600px;
   height: 500px;
   position: absolute;
@@ -36,6 +36,13 @@
   height: 150px;
   position: absolute;
   top: 500px;
+
+  img{
+    width: 600px;
+    height: 150px;
+    opacity: .5;
+   
+  }
 }
 
 .bird {
@@ -48,8 +55,12 @@
 }
 
 .obstacle {
-  background-color: rgb(0, 161, 0);
-  width: 60px;
-  height: 280px;
+  // background-color: rgb(0, 161, 0);
+  // width: 60px;
+  // height: 280px;
   position: absolute;
+  img{
+    width: 60px;
+    height: 280px;
+  }
 }
