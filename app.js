@@ -98,7 +98,7 @@ const createObstacles = () => {
         obstacleLeft < 280 &&
         birdLeft === 220 &&
         (birdBottom < obstacleBottom + 50 ||
-          birdBottom > obstacleBottom + gap - 200)
+          birdBottom > obstacleBottom + gap - 270)
       ) {
         gameOver();
       }
@@ -109,7 +109,7 @@ const createObstacles = () => {
   //Scoring system that addes a point every time the bird jumps over an obstacle#
 
   const keepScore = () => {
-    if (obstacleLeft < birdLeft) {
+    if ( obstacleLeft > birdLeft) {
       let scoring = score++;
 
       scoreDisplay.innerHTML = `${scoring}`;
