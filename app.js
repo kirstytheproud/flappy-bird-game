@@ -11,7 +11,7 @@ let gravity = 3;
 let gameStart = false;
 let gameIsOver = false;
 let score = 0;
-let gap = 450;
+let gap = 500;
 
 
   //Using a start button to start the game
@@ -83,6 +83,7 @@ const createObstacles = () => {
       obstacleLeft -= 3;
       obstacle.style.left = obstacleLeft + "px";
       topObstacle.style.left = obstacleLeft + "px"
+      bird.style.bottom = birdBottom + "px";
 
       //obstacles need to disappear off the screen
       if (obstacleLeft == -10) {
@@ -97,13 +98,13 @@ const createObstacles = () => {
         gameIsOver = true;
       }
 
-      //need to make it game over if bird collids with obstacle
-      if (
-        (obstacleLeft > 200 && obstacleLeft < 200 && birdLeft === 220) ||
-        birdBottom === 0
-      ) {
+      //need to make it game over if bird collides with obstacle
+       if (obstacleLeft > 200 && obstacleLeft < 280 && birdLeft === 220 &&
+        (birdBottom < obstacleBottom + 50 || birdBottom > obstacleBottom + gap -200)
+       )
+        {
         gameOver();
-        gameIsOver = true;
+        // gameIsOver = true;
       }
     }
   };
@@ -122,14 +123,17 @@ const createObstacles = () => {
 
   keepScore();
 
-
   let timerId = setInterval(moveObstacle, 20);
-  if ((gameIsOver = true)) {
-    setTimeout(createObstacles, 3000);
-  }
-};
 
+  if(!gameIsOver) setTimeout(createObstacles, 3000);
+  
+  // if ((gameIsOver = true)) {
+  //   setTimeout(createObstacles, 3000);
+  // }
+};
 createObstacles();
+
+  
 
 //Game over screen that shows final score
 const gameOver = () => {
