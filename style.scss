@@ -47,7 +47,7 @@
 
 .bird {
   position: absolute;
-  z-index: 2;
+  // z-index: 2;
   img {
     width: 80px;
     height: 80px;
@@ -63,4 +63,17 @@
     width: 60px;
     height: 280px;
   }
+}
+
+.topObstacle {
+  // background-image: url('8bit pipes.png');
+  transform: rotate(180deg);
+  // width: 60px;
+  // height: 300px;
+  position: absolute;
+  img{
+    width: 60px;
+    height: 280px;
+  }
+
 }

@@ -11,6 +11,7 @@ let gravity = 3;
 let gameStart = false;
 let gameIsOver = false;
 let score = 0;
+let gap = 400;
 
 
   //Using a start button to start the game
@@ -51,41 +52,49 @@ const createObstacles = () => {
   let obstacleLeft = 500;
   let randomHeight = Math.random() * 100;
   let obstacleBottom = randomHeight;
-  let topObstacleLeft = 500;
+  let topObstacleLeft = obstacleLeft;
   let randomHeight2 = Math.random() * -100;
   let topObstacleBottom = randomHeight2;
 
   
   const obstacle = document.createElement("div");
   const obstacleImg = document.createElement("img");
+  const obstacleImgTop = document.createElement("img");
   obstacle.classList.add("obstacle");
   gameDisplay.appendChild(obstacle);
 
   obstacleImg.src = "8bit pipes.png";
- 
+  obstacleImgTop.src = "8bit pipes.png";
  
   obstacle.appendChild(obstacleImg);
   obstacle.style.left = obstacleLeft + "px";
   obstacle.style.bottom = obstacleBottom + "px";
 
-  // const topObstacle = document.createElement("div");
-  // topObstacle.classList.add("topObstacle");
-  // gameDisplay.appendChild(topObstacle);
-  // topObstacle.style.left = topObstacleLeft + "px";
-  // topObstacle.style.top = topObstacleBottom + "px";
+  const topObstacle = document.createElement("div");
+  topObstacle.classList.add("topObstacle");
+  gameDisplay.appendChild(topObstacle);
+  topObstacle.appendChild(obstacleImgTop);
+  topObstacle.style.left = obstacleLeft + "px";
+  topObstacle.style.bottom = obstacleBottom+ gap+ "px";
 
   //need to make obstacles them move towards bird
   const moveObstacle = () => {
     if (gameStart == true) {
       obstacleLeft -= 3;
       obstacle.style.left = obstacleLeft + "px";
-      // topObstacleLeft -= 4;
-      // topObstacle.style.left = topObstacleLeft + "px"
+      topObstacle.style.left = topObstacleLeft + "px"
 
       //obstacles need to disappear off the screen
       if (obstacleLeft == -10) {
         clearInterval(timerId);
         gameDisplay.removeChild(obstacle);
+        gameDisplay.removeChild(topObstacle);
+
+      }
+
+      if (birdBottom === 0){
+        gameOver();
+        gameIsOver = true;
       }
 
       //need to make it game over if bird collids with obstacle
@@ -94,6 +103,7 @@ const createObstacles = () => {
         birdBottom === 0
       ) {
         gameOver();
+        gameIsOver = true;
       }
     }
   };
